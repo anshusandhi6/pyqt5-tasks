@@ -16,7 +16,7 @@
   <widget class="QPushButton" name="browse">
    <property name="geometry">
     <rect>
-     <x>210</x>
+     <x>100</x>
      <y>550</y>
      <width>191</width>
      <height>71</height>
@@ -29,17 +29,17 @@
   <widget class="QPushButton" name="convert">
    <property name="geometry">
     <rect>
-     <x>510</x>
+     <x>710</x>
      <y>550</y>
      <width>191</width>
      <height>71</height>
     </rect>
    </property>
    <property name="text">
-    <string>Convert</string>
+    <string>Convert and Save</string>
    </property>
   </widget>
-  <widget class="QLabel" name="image_1">
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -49,7 +49,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string>                            Image 1</string>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -65,10 +65,33 @@
     </rect>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string>                              Image 2</string>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="download_location">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>550</y>
+     <width>191</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Click to set the location</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="location">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>490</y>
+     <width>261</width>
+     <height>41</height>
+    </rect>
    </property>
   </widget>
  </widget>
