@@ -68,7 +68,7 @@ class Ui_Dialog(object):
         location=file[0]
 
     def convertFile(self):
-        
+        global location
         save_url=self.location.text()
         
         if len(save_url)==0:
@@ -85,12 +85,7 @@ class Ui_Dialog(object):
             self.image_2.setPixmap(QtGui.QPixmap(save_url+ "/op.png"))
             fname=""
             self.location.setText(fname)
-
-            
-            
-            
-
-
+            location=""
 
     def browsefiles(self):
         option=QFileDialog.Options()
