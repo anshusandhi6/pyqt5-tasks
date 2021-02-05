@@ -14,7 +14,8 @@ import cv2
 import os
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow,QApplication,QWidget,QPushButton,QHBoxLayout,QFileDialog,QMessageBox
-
+location=" "
+from PIL import Image
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -59,12 +60,12 @@ class Ui_Dialog(object):
 
 
     def openFileDialog(self):
+        global location
         option=QFileDialog.Options()
         widget=QWidget()
         file=QFileDialog.getOpenFileName(widget,"Open Single File","Default File", 'Images (*.png, *.xmp *.jpg)',options=option)
         self.label.setPixmap(QtGui.QPixmap(file[0]))
-        img=cv2.imread(file[0],0)
-        cv2.imwrite('output.jpg',img)
+        location=file[0]
 
     def convertFile(self):
         
@@ -78,11 +79,16 @@ class Ui_Dialog(object):
             x=msg.exec_()
 
         else:
-            img = cv2.imread('output.jpg', 1)
-            cv2.imwrite(os.path.join(save_url, 'output.jpg'), img)
-            self.image_2.setPixmap(QtGui.QPixmap("output.jpg"))
+            originalImage = cv2.imread(location,0)
+            new_im = Image.fromarray(originalImage)
+            new_im.save(save_url+ "/op.png")
+            self.image_2.setPixmap(QtGui.QPixmap(save_url+ "/op.png"))
             fname=""
             self.location.setText(fname)
+
+            
+            
+            
 
 
 
